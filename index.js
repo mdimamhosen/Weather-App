@@ -43,7 +43,7 @@ function showPosition(position){
      
     console.log(lat);
     console.log(longi);
-     
+      
 }
 
 getlocatio();
