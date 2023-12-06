@@ -49,3 +49,9 @@ function showPosition(position){
 getlocatio();
 */ 
 
+const userTab = document.querySelector("[data-userWeather");
+const searchTab = document.querySelector("[data-searchWeather");
+const userContainer = document.querySelector(".weather-container");
+const grantAccessContiner = document.querySelector("grant-location-container");
+const searchContiner = document.querySelector("search-container");
+const loadingContiner = document.querySelector("loading-container");
