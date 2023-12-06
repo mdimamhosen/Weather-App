@@ -55,3 +55,8 @@ const userContainer = document.querySelector(".weather-container");
 const grantAccessContiner = document.querySelector("grant-location-container");
 const searchContiner = document.querySelector("search-container");
 const loadingContiner = document.querySelector("loading-container");
+const userInfoContainer = document.querySelector(".user-weather-info");
+
+let currentTab = userTab;
+const API_KEY = "d1845658f92b31c64bd94f06f7188c9c" ;
+currentTab.classList.add("current-tab");
