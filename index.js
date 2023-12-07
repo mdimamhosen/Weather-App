@@ -49,14 +49,31 @@ function showPosition(position){
 getlocatio();
 */ 
 
-const userTab = document.querySelector("[data-userWeather");
-const searchTab = document.querySelector("[data-searchWeather");
+const userTab = document.querySelector("[data-userWeather]");
+const searchTab = document.querySelector("[data-searchWeather]");
 const userContainer = document.querySelector(".weather-container");
-const grantAccessContiner = document.querySelector("grant-location-container");
-const searchContiner = document.querySelector("search-container");
-const loadingContiner = document.querySelector("loading-container");
+const grantAccessContainer = document.querySelector(".grant-location-container");
+const searchContainer = document.querySelector(".search-container");
+const loadingContainer = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-weather-info");
 
-let currentTab = userTab;
-const API_KEY = "d1845658f92b31c64bd94f06f7188c9c" ;
+// Initial variable
+let currentTab = userTab; 
+const API_KEY = "d1845658f92b31c64bd94f06f7188c9c";
 currentTab.classList.add("current-tab");
+
+function switchTab(clickedTab) {
+    if (clickedTab != currentTab) {
+        currentTab.classList.remove("current-tab");
+        currentTab = clickedTab;
+        currentTab.classList.add("current-tab");
+    }
+}
+
+userTab.addEventListener("click", () => {
+    switchTab(userTab);
+});
+
+searchTab.addEventListener("click", () => {
+    switchTab(searchTab);
+});
