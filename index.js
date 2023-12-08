@@ -116,3 +116,16 @@ async function fetchUserInfo(coordinates){
         
     }
 }
+
+function renderWeatherInfo(){
+
+    const cityName= document.querySelector("[data-cityName]");
+    const countryIcon = document.querySelector("[data-country-icon]");
+    const description = document.querySelector('[data-weatherDesc]');
+    const weatherIcon = document.querySelector('[data-weatherIcon]');
+    const temp = document.querySelector('[data-temp]');
+    const windspeed = document.querySelector('[data-windspeed]');
+    const humidity = document.querySelector('[data-humidity]');
+    const cloudiness = document.querySelector('[data-cloud]');
+
+}
