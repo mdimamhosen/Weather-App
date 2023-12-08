@@ -53,7 +53,7 @@ const userTab = document.querySelector("[data-userWeather]");
 const searchTab = document.querySelector("[data-searchWeather]");
 const userContainer = document.querySelector(".weather-container");
 const grantAccessContainer = document.querySelector(".grant-location-container");
-const searchContainer = document.querySelector(".search-container");
+const searchContainer = document.querySelector("[data-searchForm]");
 const loadingContainer = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-weather-info");
 
@@ -67,6 +67,12 @@ function switchTab(clickedTab) {
         currentTab.classList.remove("current-tab");
         currentTab = clickedTab;
         currentTab.classList.add("current-tab");
+
+        if(!searchContainer.classList.contains("active")) {
+            userInfoContainer.classList.remove("active");
+            grantAccessContainer.classList.remove("active");
+            searchContainer.classList.add("active");
+        }
     }
 }
 
