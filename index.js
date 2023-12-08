@@ -94,4 +94,25 @@ function getfromSessionStorage(){
  if(!localCoOrinate){
     grantAccessContainer.classList.add("active");
  }
+ else{
+    const coordinates = JSON.parse(localCoOrinate);
+    fetchUserInfo(coordinates);
+ }
+}
+
+async function fetchUserInfo(coordinates){
+    const {lat,lon} = coordinates;
+    grantAccessContainer.classList.remove("active");
+    loadingContainer.classList.add("active");
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+
+        const data = await response.json();
+
+        loadingContainer.classList.remove("active");
+        userInfoContainer.classList.add("active");
+        renderWeatherInfo(data);
+    } catch (error) {
+        
+    }
 }
