@@ -73,6 +73,11 @@ function switchTab(clickedTab) {
             grantAccessContainer.classList.remove("active");
             searchContainer.classList.add("active");
         }
+        else{
+            searchContainer.classList.remove("active");
+             userInfoContainer.classList.remove("active");
+             getfromSessionStorage();
+        }
     }
 }
 
@@ -83,3 +88,10 @@ userTab.addEventListener("click", () => {
 searchTab.addEventListener("click", () => {
     switchTab(searchTab);
 });
+// check if co-ordinates are already present in session storage
+function getfromSessionStorage(){
+ let localCoOrinate = sessionStorage.getItem("user-coordinates");
+ if(!localCoOrinate){
+    grantAccessContainer.classList.add("active");
+ }
+}
